@@ -21,6 +21,8 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var errorLabel: UILabel!
     
+    static var user: User!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +55,7 @@ class LoginViewController: UIViewController {
                 self.errorLabel.alpha = 1
             }
             else{
+                LoginViewController.user = User(forUser: username, withEmail: (result?.user.email)!, withUID: (result?.user.uid)!)
                 let homeviewcontroller = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.HomeViewController) as? HomeViewController
                 self.view.window?.rootViewController = homeviewcontroller
                 self.view.window?.makeKeyAndVisible()

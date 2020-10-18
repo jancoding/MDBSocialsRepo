@@ -8,14 +8,18 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-
+    @IBOutlet weak var detail: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func detail(_ sender: Any) {
+        performSegue(withIdentifier: "detail", sender: self)
+    }
+    
     /*
     // MARK: - Navigation
 

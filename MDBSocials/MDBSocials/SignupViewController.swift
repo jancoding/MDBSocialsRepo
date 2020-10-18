@@ -92,6 +92,7 @@ class SignupViewController: UIViewController {
                         }
                     }
                     //Transition to the home screen
+                    LoginViewController.user = User(forUser: username, withEmail: (result?.user.email)!, withUID: (result?.user.uid)!)
                     self.transitionToHome()
                     
                     
